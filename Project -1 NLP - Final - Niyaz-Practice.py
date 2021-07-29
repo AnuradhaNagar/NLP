@@ -28,7 +28,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 # In[9]:
 
 
-data= pd.read_csv("F:/Project/NLP-Emails-abusive-nonabusive--master/P38-NLP-Emails/emails.csv")
+data= pd.read_csv("C:\Users\INDIA\project\Model Building files\Model Building files/emails.csv")
 # creating new dataframe using "content" and "class"
 data.head()
 
