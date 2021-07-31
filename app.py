@@ -10,7 +10,7 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-#from sklearn.externals import joblib
+import joblib
 #import sklearn.external.joblib as extjoblib
 import joblib
 #import seaborn as sns; sns.set_style('whitegrid')
