@@ -10,7 +10,7 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-import joblib
+#import joblib
 #import sklearn.external.joblib as extjoblib
 import joblib
 #import seaborn as sns; sns.set_style('whitegrid')
@@ -32,7 +32,7 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-    df = pd.read_csv('C:/Deployment\Final - NLP-Abusive-Non-Abusive-classifier-project-master/Model Deployment files/emails.csv')
+    df = pd.read_csv('D:\emails.csv')
     df = df.drop(['Unnamed: 0', 'filename', 'Message-ID'], axis = 1)
     df['label'] = df['Class'].map({'Non Abusive': 0, 'Abusive': 1})
     
