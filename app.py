@@ -1,16 +1,20 @@
+import nltk
 from flask import Flask,render_template,request,send_file
 import pandas as pd
 import re 
-import seaborn as sns; sns.set_style('whitegrid')
+#import seaborn as sns; sns.set_style('whitegrid')
 from sklearn.feature_extraction.text import TfidfVectorizer
-from nltk.stem.porter import PorterStemmer
+from nltk.stem import PorterStemmer
+#from nltk.stem.porter import PorterStemmer
+from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
+#from sklearn.externals import joblib
+#import sklearn.external.joblib as extjoblib
 import joblib
-import seaborn as sns; sns.set_style('whitegrid')
+#import seaborn as sns; sns.set_style('whitegrid')
 from nltk.tokenize import RegexpTokenizer
-import nltk
 
 nltk.download('stopwords')
 nltk.download('punkt')
@@ -28,7 +32,7 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-    df = pd.read_csv('D:\Emails.csv.csv')
+    df = pd.read_csv('C:/Deployment\Final - NLP-Abusive-Non-Abusive-classifier-project-master/Model Deployment files/emails.csv')
     df = df.drop(['Unnamed: 0', 'filename', 'Message-ID'], axis = 1)
     df['label'] = df['Class'].map({'Non Abusive': 0, 'Abusive': 1})
     
